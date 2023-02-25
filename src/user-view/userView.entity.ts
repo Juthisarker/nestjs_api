@@ -1,6 +1,7 @@
 import { DataSource, ViewColumn, ViewEntity } from "typeorm";
 import { User } from "./../users/user.entity";
 import { Report } from "./../reports/report.entity";
+
 @ViewEntity({
     expression: (dataSource: DataSource) => dataSource
         .createQueryBuilder()
@@ -15,8 +16,8 @@ export class UserView {
     id: number;
 
     @ViewColumn()
-    source: string;
+    email: string;
 
     @ViewColumn()
-    destination: string;
+    price: string;
 }
